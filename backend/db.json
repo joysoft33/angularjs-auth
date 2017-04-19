@@ -47,6 +47,12 @@
       "email": "paul@gmail.com",
       "password": "toto",
       "id": 8
+    },
+    {
+      "email": "toto@free.fr",
+      "password": "toto",
+      "name": "Toto",
+      "id": 9
     }
   ]
 }
