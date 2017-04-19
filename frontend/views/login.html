@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="alert alert-danger" ng-show="$ctrl.errorMessage">
+    {{$ctrl.errorMessage}}
+  </div>
+  <div class="form-group">
+    Nouvel utilisateur <input ng-model="create" type="checkbox" />
+  </div>
+  <div ng-show="create" class="form-group">
+    <input ng-model=" $ctrl.user.name" placeholder="Nom" type="text" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input ng-model="$ctrl.user.email" placeholder="Adresse mail" type="text" class="form-control" />
+  </div>
+  <div class="form-group">
+    <input ng-model="$ctrl.user.password" placeholder="Mot de passe" type="password" class="form-control" />
+  </div>
+  <hr />
+  <button class="btn btn-primary" ng-click="$ctrl.submit($ctrl.user)">
+    Valider
+  </button>
+</div>

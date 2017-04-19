@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "name": "Eric LEON",
+      "email": "ericp.leon@gmail.com",
+      "password": "toto",
+      "id": 1
+    },
+    {
+      "name": "Lucien DOLTO",
+      "email": "lucien.dolto@gmail.com",
+      "password": "tutu",
+      "id": 2
+    },
+    {
+      "name": "Régis COLLOT",
+      "email": "regis.collot@gmail.com",
+      "password": "toto",
+      "id": 3
+    },
+    {
+      "name": "Toto",
+      "email": "toto@gmail.com",
+      "password": "toto",
+      "id": 4
+    },
+    {
+      "name": "Léon",
+      "email": "leon@gmail.com",
+      "password": "toto",
+      "id": 5
+    },
+    {
+      "name": "Sinatra",
+      "email": "sinatra@gmail.com",
+      "password": "toto",
+      "id": 6
+    },
+    {
+      "name": "Régine",
+      "email": "regine@gmail.com",
+      "password": "toto",
+      "id": 7
+    },
+    {
+      "name": "Paul",
+      "email": "paul@gmail.com",
+      "password": "toto",
+      "id": 8
+    }
+  ]
+}

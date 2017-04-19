@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    USERS PAGE
+  </div>
+  <div class="panel-body">
+    <table ng-if="$ctrl.users" class="table">
+      <tr ng-repeat="user in $ctrl.users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
