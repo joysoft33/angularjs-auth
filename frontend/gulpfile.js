@@ -54,34 +54,6 @@ gulp.task('watch:prod', function () {
 });
 
 /**
- * COMMON SUB TASKS
- */
-// Control every js source file syntaxt
-gulp.task('vet', function () {
-  return gulp.src(src.js)
-    .pipe(plugins.jshint())
-    .pipe(plugins.jscs())
-    .pipe(plugins.jshint.reporter('jshint-stylish'), {
-      verbose: true
-    })
-    .pipe(plugins.jshint.reporter('fail'));
-});
-
-// Extract main html file specific vendors includes
-// Write them in specific destination directory
-// and replace links in main html with their new paths
-gulp.task('subst', function (cb) {
-  gulp.src(src.index)
-    .pipe(plugins.htmlDependencies({
-      dest: dst.path,
-      prefix: dst.vendors,
-      flat: true
-    }))
-    .pipe(gulp.dest(dst.path));
-  cb();
-});
-
-/**
  * DEVELOPMENT : SUB TASKS
  */
 // Compile sass files
@@ -143,6 +115,33 @@ gulp.task('buildProd', ['vet', 'clean-js', 'subst'], function () {
     .pipe(plugins.uglify())
     .pipe(gulp.dest(dst.path + dst.scripts))
     .pipe(plugins.livereload());
+});
+
+/**
+ * COMMON TASKS
+ */
+// Control js source files code quality and style
+gulp.task('vet', function () {
+  return gulp.src(src.js)
+    .pipe(plugins.jshint())
+    .pipe(plugins.jscs())
+    .pipe(plugins.jshint.reporter('jshint-stylish'), {
+      verbose: true
+    })
+    .pipe(plugins.jshint.reporter('fail'));
+});
+
+// Extract main html file specific vendors includes
+// Write them in specific destination directory
+// and replace links in main html with their new paths
+gulp.task('subst', function () {
+  return gulp.src(src.index)
+    .pipe(plugins.htmlDependencies({
+      dest: dst.path,
+      prefix: dst.vendors,
+      flat: true
+    }))
+    .pipe(gulp.dest(dst.path));
 });
 
 // Copy image files into dist directory
