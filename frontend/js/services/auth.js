@@ -1,10 +1,13 @@
+'use strict';
+
 angular.module('app')
 
   .service('AuthService', function ($rootScope, $q, $http, $window) {
+    'ngInject';
 
     const API_URL = 'http://localhost:3000/users';
     const KEY = 'app-auth';
-    
+
     this.isAuthenticated = () => {
       var user = angular.fromJson($window.localStorage.getItem(KEY));
       return user && typeof user.id != 'undefined';

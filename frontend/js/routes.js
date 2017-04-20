@@ -1,6 +1,9 @@
+'use strict';
+
 angular.module('app')
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
+    'ngInject';
 
     $stateProvider
       .state('home', {
@@ -21,11 +24,11 @@ angular.module('app')
         url: '/login',
         component: 'login',
         resolve: {
-          redirect: function($state) {
-            return $state.transition._targetState._params.redirect;;
+          redirect: function ($state) {
+            return $state.transition._targetState._params.redirect;
           }
         }
-      })
+      });
 
-      $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/home');
   });

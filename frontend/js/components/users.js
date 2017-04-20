@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app')
 
   .component('users', {
@@ -9,6 +11,7 @@ angular.module('app')
     },
 
     controller: function ($log) {
+      'ngInject';
 
       this.$onInit = () => {
         $log.info('users component loaded');

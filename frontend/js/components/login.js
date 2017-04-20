@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('app')
 
   .component('login', {
@@ -9,6 +11,7 @@ angular.module('app')
     },
 
     controller: function (AuthService, $state) {
+      'ngInject';
 
       this.$onInit = () => {
         this.errorMessage = '';

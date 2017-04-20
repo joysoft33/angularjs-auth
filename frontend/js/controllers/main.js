@@ -1,6 +1,9 @@
+'use strict';
+
 angular.module('app')
 
-  .controller('main', function(AuthService, $rootScope, $state) {
+  .controller('main', function (AuthService, $rootScope, $state) {
+    'ngInject';
 
     this.isAuthenticated = AuthService.isAuthenticated();
 
