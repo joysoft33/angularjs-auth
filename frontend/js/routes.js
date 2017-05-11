@@ -20,6 +20,16 @@ angular.module('app')
           }
         }
       })
+      .state('user', {
+        url: '/user/:id',
+        component: 'user',
+        authenticate: true,
+        resolve: {
+          user: function (UsersService, $transition$) {
+            return UsersService.getUser($transition$.params().id);
+          }
+        }
+      })
       .state('login', {
         url: '/login',
         component: 'login',

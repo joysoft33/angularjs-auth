@@ -19,4 +19,15 @@ angular.module('app')
       return defer.promise;
     };
 
+    this.getUser = (id) => {
+      var defer = $q.defer();
+
+      $http.get(API_URL + `/${id}`).then((response) => {
+        defer.resolve(response.data);
+      }).catch((response) => {
+        defer.reject(response.statusText);
+      });
+
+      return defer.promise;
+    };
   });

@@ -6,7 +6,7 @@
     <table ng-if="$ctrl.users" class="table">
       <tr ng-repeat="user in $ctrl.users">
         <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
+        <td><a ui-sref="user({ id: user.id })">{{user.name}}</a></td>
         <td>{{user.email}}</td>
       </tr>
     </table>
